@@ -24,8 +24,9 @@ class DBconnection {
 
     // La méthode connect sert à tester la connection à la bbd.
     function connect(){
-        // try : création d'une nouvelle insentence de class pour tester les identifiants du localhost grace au constructeur du PDO.
+        // try catch : tester la connexion à la bdd. 
         try {
+            // création d'une nouvelle insentence de class pour tester les identifiants du localhost grace au constructeur du PDO.
             $pdo = new PDO($this -> dsn, $this -> username, $this -> password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

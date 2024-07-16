@@ -1,11 +1,17 @@
 <?php
 require_once("../config/config.php");
+require_once("../model/articleRepository.php");
 
-$DBconnection = new DBconnection();
-$pdo = $DBconnection -> connect();
+class indexController {
 
-$stmt = $pdo->query("SELECT * FROM article");
-// retourne dans un tableau tous les produits.
-$articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function index(){
 
-require_once("../templates/page/indexView.php");
+        $articleRepository = new ArticleRepository();
+        $articles = $articleRepository -> findArticle();
+    
+        require_once("../templates/page/indexView.php");
+    }
+};
+
+$indexController = new IndexController();
+$indexController -> index();
