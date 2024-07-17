@@ -34,6 +34,7 @@ class ArticleRepository {
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':created_at', $date);
 
+// J'enregistre le résultat du booleen dans la variable $isRequestOk.
         $isRequestOk = $stmt->execute();
 
         return $isRequestOk;
@@ -41,4 +42,24 @@ class ArticleRepository {
 
 
     }
+
+    public function findOneById($id){
+
+    // Préparation de la requête SQL.
+        $sql = "SELECT * FROM article WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    //Exécution de la requête SQL
+        $stmt->execute();
+
+
+        $article = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        return $article;
+    }
+
 };
