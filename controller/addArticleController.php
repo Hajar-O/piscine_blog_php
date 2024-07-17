@@ -6,17 +6,15 @@ class AddArticleController{
 
     public function addArticle(){
 
-
-
         // Définir les paramètres et exécuter
         $title = "Mon nouvel article ";
         $content = " lorem ipsum la piscine blabla blabla";
         $date = "2024-07-17";
 
         $ArticleRepository = new ArticleRepository();
-        $ArticleRepository ->insert($title, $content, $date);
+        $isRequestOk = $ArticleRepository ->insert($title, $content, $date);
 
-
+        require_once ("../templates/page/addArticleView.php");
     }
 }
 

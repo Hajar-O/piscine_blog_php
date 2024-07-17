@@ -34,12 +34,11 @@ class ArticleRepository {
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':created_at', $date);
 
+        $isRequestOk = $stmt->execute();
+
+        return $isRequestOk;
         // Exécuter la requête
-        if ($stmt->execute()){
-            echo "Nouvel article ajouté avec succès";
-        } else {
-            echo "Erreur lors de l'ajout de l'article";
-        }
+
 
     }
 };

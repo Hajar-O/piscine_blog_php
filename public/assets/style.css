@@ -37,10 +37,11 @@ h1,h2{
     font-family: "Playwrite Cuba", sans-serif;
 }
 .my_articles{
-    
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 .my_articles h3{
     color: rgb(245, 243, 226);
