@@ -21,6 +21,8 @@ class AddArticleController{
 
 
 // on remplace les paramètres par les vraies valeurs:
+
+        // On réalise l'opération sur plusieurs étapes pour éviter les injections externieurs SQL.
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':created_at', $date);
