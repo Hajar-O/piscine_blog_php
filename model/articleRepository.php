@@ -2,13 +2,17 @@
 
 class ArticleRepository {
 
-    public function findArticles(){
-// j'intencie une nouvelle classe BDconnection
+    private $pdo;
+    function __construct() {
+        // j'intencie une nouvelle classe BDconnection
         $DBconnection = new DBconnection();
         // j'appelle la méthode qui permet la connexion à la DBB.
-        $pdo = $DBconnection -> connect();
+        $this->pdo = $DBconnection -> connect();
+    }
+    public function findArticles(){
+
 // j'utilise le Query() qui permet de faite une requête à la base de données et selectionne toutes colonnes de la table article.
-        $stmt = $pdo->query("SELECT * FROM article");
+        $stmt = $this->pdo->query("SELECT * FROM article");
         // retourne dans un tableau tous les produits.
         $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -16,13 +20,11 @@ class ArticleRepository {
     }
     public function insert ($title,$content, $date){
 
-        // j'établie la connexion à la BDD.
-        $DBconnection = new DBconnection();
-        $pdo = $DBconnection->connect();
+        // j'établie la connexion à la BDD
 
         // Préparer la requête d'insertion. la vérification des données fournis par l'utilisateur est fait avec le 'prepare' et 'bindParam'
         $sql = "INSERT INTO article (title, content, created_at) VALUES (:title, :content, :created_at)";
-        $stmt=$pdo->prepare($sql);
+        $stmt=$this->pdo->prepare($sql);
 
 
         // on remplace les paramètres par les vraies valeurs:
