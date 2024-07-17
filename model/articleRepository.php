@@ -2,7 +2,7 @@
 
 class ArticleRepository {
 
-    public function findArticle(){
+    public function findArticles(){
 // j'intencie une nouvelle classe BDconnection
         $DBconnection = new DBconnection();
         // j'appelle la méthode qui permet la connexion à la DBB.
