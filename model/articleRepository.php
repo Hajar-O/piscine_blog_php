@@ -49,13 +49,12 @@ class ArticleRepository {
         $sql = "SELECT * FROM article WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
 
-
+// Je remplace le parametres par la vraie valeur.
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-    //Exécution de la requête SQL
+    //j'exécute de la requête SQL
         $stmt->execute();
-
-
+        //j'affiche l'article.
         $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
 

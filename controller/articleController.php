@@ -34,10 +34,10 @@ class ArticleController{
         $articleRepository = new ArticleRepository();
         $article = $articleRepository ->findOneById(1);
 
-        require_once ("../templates/page/articleView.php");
+        require_once ("../templates/page/showArticleView.php");
     }
 }
 
 $ArticleController = new ArticleController();
-$ArticleController->addArticle();
+$ArticleController->showArticle();
 
