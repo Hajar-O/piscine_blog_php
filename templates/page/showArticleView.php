@@ -7,12 +7,16 @@ require_once ("../config/config.php"); ?>
         <h1>Le super blog de la piscine</h1>
 
         <article>
-            <h2><?php echo $article['title']; ?></h2>
-</article>
+
+                    <h3><?php echo $article['title'] ?></h3>
+                    <p><?php echo $article['content']?></p>
+                    <p><?php echo $article['created_at']?></p>
+
+        </article>
 
 
 </main>
-
+<?php require_once ("../templates/partial/footer.php");?>
 
 
 

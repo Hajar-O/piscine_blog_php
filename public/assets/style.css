@@ -62,6 +62,53 @@ h1,h2{
     box-shadow: 4px 4px 6px rgb(109, 106, 106);
     transform: scale(1.1); 
 }
+/*-----------------add article------------*/
+.formAddArticle{
+    background-color: #b5b8dd;
+    width: 40%;
+    border-radius: 13px;
+    margin: auto;
+    padding: 30px;
+
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        text-align: center;
+        margin: 20px;
+    }
+    input{
+        width: 45%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    button{
+        unset:all;
+        border-radius: 13px;
+        background-color: #4992b1;
+        width: 30%;
+        height: 30px;
+        color: azure;
+        text-decoration: none;
+        border: none;
+        margin: 30px;
+        margin: auto;
+    }
+}
+/*-----------------Show article------------*/
+.buttonArticle{
+    unset:All;
+    border-radius: 13px;
+    background-color: #b5b8dd;
+    width: 10%;
+    height: 30px;
+    color: azure;
+    text-decoration: none;
+    border: none;
+    margin: 30px;
+}
 /* ----------------FOOTER------------------ */
 
 footer{

@@ -4,18 +4,17 @@ require_once ("../templates/partial/header.php"); ?>
 <main>
     <h1>Ajouter un article</h1>
 
-    <form method="post">
-            <label> Title
+    <section class="formAddArticle">
+            <form method="post">
+                    <label> Title</label>
                 <input type="text" name="title">
-            </label>
 
-            <label> Content
-                <input type="text" name="content">
-            </label>
-            <button>Submit</button>
+                    <label> Content </label>
+                        <input type="text" name="content">
 
-
-    </form>
+                    <button>Submit</button>
+            </form>
+    </section>
 <! je test le résultat du booleen, si TRUE alors j'affiche mon HTML.-->
     <?php if($isRequestOk) {?>
 

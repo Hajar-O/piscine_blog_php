@@ -31,13 +31,29 @@ class ArticleController{
     }
 
     public function showArticle(){
+        // récupère l'id passé dans l'url de la requête.
+        $id = $_GET["id"];
+
+        // on intancie le repository pour accéder à la methode.
         $articleRepository = new ArticleRepository();
-        $article = $articleRepository ->findOneById(1);
+        //on appelle la méthode qui permet de récupérer l'article en fonction de l'ID.
+        $article = $articleRepository ->findOneById($id);
 
         require_once ("../templates/page/showArticleView.php");
     }
+
+    public function deleteArticle(){
+        // récupère l'id passé dans l'url de la requête.
+        $id = $_GET["id"];
+
+        // on intancie le repository pour accéder à la methode.
+        $articleRepository = new ArticleRepository();
+        //on appelle la méthode qui permet de supprimer l'article en fonction de l'ID.
+        $article = $articleRepository ->deleteById($id);
+
+        require_once ("../templates/page/deleteArticle.php");
+    }
 }
 
-$ArticleController = new ArticleController();
-$ArticleController->showArticle();
+
 

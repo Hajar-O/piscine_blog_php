@@ -61,4 +61,18 @@ class ArticleRepository {
         return $article;
     }
 
+    public function deleteById($id){
+        // Préparation de la requête SQL pour supprimer un article.
+        $sql = "DELETE FROM article WHERE id = :id";
+
+        $stmt = $this->pdo->prepare($sql);
+        // Je remplace le parametres par la vraie valeur.
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    //j'exécute de la requête SQL
+        $stmt->execute();
+
+
+    }
+
 };
