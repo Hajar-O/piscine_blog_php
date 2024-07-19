@@ -23,10 +23,14 @@
         </ul>
     </nav>
 </header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
 
-{% block content %}
-{% endblock %}
-
+<aside class="sideBar">
+    <p>Je suis le couloir des nageures.</p>
+</aside>
 <footer>
     <div class="logo_2">
         <img src="../public/assets/img/water-ladder-solid.svg" alt="">
