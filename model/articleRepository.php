@@ -70,7 +70,8 @@ class ArticleRepository {
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
     //j'exécute de la requête SQL
-        $stmt->execute();
+        // et retourne le résultat (succès ou echec)
+        return $stmt->execute();
 
 
     }

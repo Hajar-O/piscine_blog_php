@@ -6,7 +6,7 @@
     <title>Le blog de la piscine</title>
 </head>
         <body>
-        <?php require_once("../templates/partial/header.php") ?>
+        <?php require_once("../templates/partial/header.html.twig") ?>
                 <main>
                      
                      <h2>Les différentes piscines</h2>
@@ -31,6 +31,6 @@
                      
 
                 </main>
-        <?php require_once("../templates/partial/footer.php") ?>
+        <?php require_once("../templates/partial/footer.html.twig") ?>
         </body>
 </html>

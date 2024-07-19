@@ -1,6 +1,6 @@
-<?php
-require_once ("../templates/partial/header.html.twig");
-require_once ("../config/config.php"); ?>
+
+    {% include('partial/header.html.twig') %}
+
 
 <main>
 
@@ -8,15 +8,15 @@ require_once ("../config/config.php"); ?>
 
         <article>
 
-                    <h3><?php echo $article['title'] ?></h3>
-                    <p><?php echo $article['content']?></p>
-                    <p><?php echo $article['created_at']?></p>
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.content }}</p>
+                    <p>{{ article.created_at }}</p>
 
         </article>
 
 
 </main>
-<?php require_once ("../templates/partial/footer.html.twig");?>
+{% include('partial/footer.html.twig') %}
 
 
 

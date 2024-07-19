@@ -7,6 +7,7 @@ require_once('../controller/IndexController.php');
     $requestUri = $_SERVER['REQUEST_URI'];
 //analyse l'url reçu
     $uri = parse_url($requestUri, PHP_URL_PATH);
+
 //ajoute le chemin d'accès manquant à l'url pour la redirection vers le controller correspondant
     $endUri = str_replace('/piscine_blog/public/', '', $uri);
     $endUri = trim($endUri, '/');

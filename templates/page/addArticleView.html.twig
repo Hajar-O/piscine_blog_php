@@ -1,5 +1,5 @@
-<?php
-require_once ("../templates/partial/header.html.twig"); ?>
+
+{% include('partial/header.html.twig') %}
 
 <main>
     <h1>Ajouter un article</h1>
@@ -16,12 +16,12 @@ require_once ("../templates/partial/header.html.twig"); ?>
             </form>
     </section>
 <! je test le résultat du booleen, si TRUE alors j'affiche mon HTML.-->
-    <?php if($isRequestOk) {?>
+    {%  if isRequestOk %}
 
         <p>L'article a bien été enregirsté.</p>
 
 
-    <?php } ?>
+    {% endif %}
 </main>
 
-<?php require_once ("../templates/partial/footer.html.twig")?>
+{%include("partial/footer.html.twig")%}

@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 session_set_cookie_params(30);
 
 //  création d'une nouvelle classe BDconnection
+require_once ('../vendor/autoload.php');
 class DBconnection {
     private $dsn;
 
