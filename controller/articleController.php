@@ -3,7 +3,12 @@
 require_once ("../config/config.php");
 require_once ("../model/articleRepository.php");
 class ArticleController{
+    private $twig;
 
+     function __construct(){
+        $loader = new \Twig\Loader\FilesystemLoader('../templates');
+        $this -> twig = new \Twig\Environment($loader);
+    }
     public function addArticle(){
 
         $isRequestOk = false;
@@ -28,10 +33,10 @@ class ArticleController{
 
 
 // on instencie une nouvelle classe Twig pour indiquer ou se trouvent tous les fichers twig.
-        $loader = new \Twig\Loader\FilesystemLoader('../templates');
-        $twig = new \Twig\Environment($loader);
+       // $loader = new \Twig\Loader\FilesystemLoader('../templates');
+       // $twig = new \Twig\Environment($loader);
 
-        echo $twig -> render('page/addArticleView.html.twig', [
+        echo $this->twig -> render('page/addArticleView.html.twig', [
             'isRequestOk' => $isRequestOk
         ]);    }
 
@@ -45,10 +50,10 @@ class ArticleController{
         $article = $articleRepository ->findOneById($id);
 
 // on instencie une nouvelle classe Twig pour indiquer ou se trouvent tous les fichers twig.
-        $loader = new \Twig\Loader\FilesystemLoader('../templates');
-        $twig = new \Twig\Environment($loader);
+        //$loader = new \Twig\Loader\FilesystemLoader('../templates');
+        //$this->twig = new \Twig\Environment($loader);
 
-        echo $twig -> render('page/showArticleView.html.twig', [
+        echo $this->twig -> render('page/showArticleView.html.twig', [
             'article' => $article
         ]);    }
 
@@ -66,10 +71,10 @@ class ArticleController{
             header("location:http://localhost:8888/piscine_blog/public/");
         } else {
 // on instencie une nouvelle classe Twig pour indiquer ou se trouvent tous les fichers twig.
-            $loader = new \Twig\Loader\FilesystemLoader('../templates');
-            $twig = new \Twig\Environment($loader);
+            //$loader = new \Twig\Loader\FilesystemLoader('../templates');
+            //$twig = new \Twig\Environment($loader);
 
-            echo $twig -> render('page/deleteArticleFailView.html.twig', [
+            echo $this->twig -> render('page/deleteArticleFailView.html.twig', [
                 'deleteOk' => $deleteOk
             ]);
         }
